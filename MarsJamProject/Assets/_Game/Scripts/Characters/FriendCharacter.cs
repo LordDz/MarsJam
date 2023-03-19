@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.EventSystems;
-using UnityEngine.WSA;
 
 public class FriendCharacter : MonoBehaviour
 {
-
     public NavMeshAgent agent;
     public GameObject spawnEffect;
     public GameObject bloodEffect;
