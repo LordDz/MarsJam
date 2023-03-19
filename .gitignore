@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+MarsJamProject/Library
+MarsJamProject/UserSettings
+MarsJamProject/obj
+MarsJamProject/Logs
