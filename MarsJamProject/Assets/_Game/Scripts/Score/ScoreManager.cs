@@ -4,14 +4,17 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] int scorePerFriend = 3;
-    [SerializeField] int scorePerBoss = 3;
+    [SerializeField] int berriesPerMedium = 4;
+    [SerializeField] int berriesPerBoss = 5;
     [SerializeField] Spawner spawnerSmall;
+    [SerializeField] Spawner spawnerMedium;
     [SerializeField] Spawner spawnerBig;
     private ScoreBush[] listBushes;
     private FriendSpawner friendSpawner;
     private int score = 0;
     private int scoreFriend = 0;
-    private int scoreBoss = 0;
+    private int berriesMedium = 0;
+    private int berriesBoss = 0;
 
     private void Start()
     {
@@ -22,19 +25,30 @@ public class ScoreManager : MonoBehaviour
     public void AddScore()
     {
         score++;
-        scoreBoss++;
         scoreFriend++;
-
-        if (scoreBoss >= scorePerBoss)
-        {
-            scoreBoss = 0;
-            spawnerBig.SpawnEnemy();
-        }
 
         if (scoreFriend >= scorePerFriend)
         {
             scoreFriend = 0;
             friendSpawner.SpawnFriend();
+        }
+    }
+
+    public void BerryPickedUp()
+    {
+        berriesMedium++;
+        berriesBoss++;
+
+        if (berriesMedium >= berriesPerMedium)
+        {
+            berriesMedium = 0;
+            spawnerMedium.SpawnEnemy();
+        }
+
+        if (berriesBoss >= berriesPerBoss)
+        {
+            berriesBoss = 0;
+            spawnerBig.SpawnEnemy();
         }
     }
 
@@ -45,6 +59,11 @@ public class ScoreManager : MonoBehaviour
         {
             listBushes[i].ResetBush();
         }
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
 

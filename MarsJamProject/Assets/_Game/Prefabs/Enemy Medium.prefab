@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 4405484384397083760}
   m_LocalRotation: {x: -0, y: 0.24217594, z: -0, w: 0.97023237}
   m_LocalPosition: {x: 0, y: 1.36, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5317683944767681709}
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75b839364f20ca34db175d0c4614486b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.08362639, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -296,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8535273132349675178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ RectTransform:
   m_GameObject: {fileID: 4795253207501027073}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5217523151087389440}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.67394584, b: 0, a: 0.3372549}
+  m_Color: {r: 0.08235294, g: 1, b: 0, a: 0.27450982}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 5317683944767580302}
   - component: {fileID: 5317683944767580300}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy Medium
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5317683944767580301}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 2
   m_Speed: 3.5
   m_Acceleration: 40
   avoidancePriority: 50
@@ -751,7 +751,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &5317683944767580300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5317683944767580302}
   anim: {fileID: 5317683944760154957}
-  spawnEffect: {fileID: 678275236435230102, guid: 74fe4ce30a27ad347bd0672cfaaf3333,
+  spawnEffect: {fileID: 678275236435230102, guid: 6e772a37106282543b094d9636a3487e,
     type: 3}
   ragdoll: {fileID: 1063870869021684672, guid: 20b839841c44a5c4f9218558c4b3516f, type: 3}
   bloodEffect: {fileID: 2677878940413088381, guid: 871bfd581f93b2d4f98b028624f4a509,
@@ -775,11 +775,11 @@ MonoBehaviour:
   spawnHeight: 40
   spawnMoveSpeed: 30
   jumpAttackDistance: 1.4
-  walkspeed: 2
-  runspeed: 4.5
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  walkspeed: 4
+  runspeed: 4
+  normalColor: {r: 1, g: 0, b: 0, a: 1}
   angryColor: {r: 1, g: 0, b: 0.9019608, a: 1}
-  isAngry: 0
+  isAngry: 1
 --- !u!1 &5317683944767580303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 5342061423319721138}
   m_LocalRotation: {x: -0, y: -0.62230974, z: -0, w: 0.7827711}
   m_LocalPosition: {x: 0, y: 1.36, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5317683944767681709}
@@ -1636,7 +1636,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75b839364f20ca34db175d0c4614486b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.08362639, g: 1, b: 0, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.89776754, b: 0, a: 0.26666668}
+  m_Color: {r: 0.08235294, g: 1, b: 0, a: 0.26666668}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

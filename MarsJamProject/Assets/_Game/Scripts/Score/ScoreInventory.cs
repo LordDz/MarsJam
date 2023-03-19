@@ -24,7 +24,8 @@ public class ScoreInventory : MonoBehaviour
         scoreBerries[nrOfBerries].gameObject.SetActive(true);
         berryPickupSound[nrOfBerries].Play();
         nrOfBerries++;
-        Debug.Log("nrOfBerries: " + nrOfBerries);
+        scoreManager.BerryPickedUp();
+        //Debug.Log("nrOfBerries: " + nrOfBerries);
     }
 
     public bool CanReturnBerries()
@@ -34,8 +35,8 @@ public class ScoreInventory : MonoBehaviour
 
     public bool CanAddBerry()
     {
-        Debug.Log("CanAddBerry - nr of Berries: " + nrOfBerries + " < " + scoreBerries.Count);
-        return nrOfBerries < scoreBerries.Count;
+        //Debug.Log("CanAddBerry - nr of Berries: " + nrOfBerries + " < " + scoreBerries.Count);
+        return nrOfBerries < scoreBerries.Count - 1;
     }
 
     public void StartReturningBerries()

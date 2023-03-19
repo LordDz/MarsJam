@@ -37,6 +37,5 @@ public class CharacterRespawner : MonoBehaviour
         {
             friendCharacter.StartFollowingPlayer();
         }
-
     }
 }

@@ -49,7 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa15bba0f170b34a9364dbdc7be73de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreBerries: []
+  scoreBerries:
+  - {fileID: 804959701094319043}
+  - {fileID: 366169190583804920}
+  - {fileID: 4894859903813563109}
+  - {fileID: 836381801048967982}
   timePerBerry: 0.2
   berryPickupSound:
   - {fileID: 314277782641632004}
@@ -71,6 +75,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4180350802466609868}
   - component: {fileID: 816024769761948827}
+  - component: {fileID: 2926379847044518680}
+  - component: {fileID: 804959701094319043}
   m_Layer: 0
   m_Name: Berry (1)
   m_TagString: Untagged
@@ -145,6 +151,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2926379847044518680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639875507242829314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac679729a62b5c241bc0bac8a73bf189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &804959701094319043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639875507242829314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e8dfd5262ebcf4db7184faa037f73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 1
 --- !u!1 &5069641276429950705
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +698,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4274446875449086179}
   - component: {fileID: 7271178893324052740}
+  - component: {fileID: 2278471141999796462}
+  - component: {fileID: 4894859903813563109}
   m_Layer: 0
   m_Name: Berry (3)
   m_TagString: Untagged
@@ -741,6 +774,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2278471141999796462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690198800389336216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac679729a62b5c241bc0bac8a73bf189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4894859903813563109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690198800389336216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e8dfd5262ebcf4db7184faa037f73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 1
 --- !u!1 &7691266166352588554
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +937,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2500432385647731079}
   - component: {fileID: 1076295429384468282}
-  - component: {fileID: 3264297035020052140}
+  - component: {fileID: 7424062081581371058}
+  - component: {fileID: 836381801048967982}
   m_Layer: 0
   m_Name: Berry (4)
   m_TagString: Untagged
@@ -954,7 +1013,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3264297035020052140
+--- !u!114 &7424062081581371058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243810404059463690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac679729a62b5c241bc0bac8a73bf189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &836381801048967982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1272,6 +1343,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1866208220202894259}
   - component: {fileID: 3132175615337863133}
+  - component: {fileID: 3056643355576073861}
+  - component: {fileID: 366169190583804920}
   m_Layer: 0
   m_Name: Berry (2)
   m_TagString: Untagged
@@ -1346,6 +1419,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3056643355576073861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608846965839569712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac679729a62b5c241bc0bac8a73bf189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &366169190583804920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608846965839569712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e8dfd5262ebcf4db7184faa037f73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 1
 --- !u!1 &8829297241601682980
 GameObject:
   m_ObjectHideFlags: 0
