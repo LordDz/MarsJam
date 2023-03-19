@@ -2,22 +2,27 @@
 
 public class ScoreBush : MonoBehaviour
 {
-    public GameObject carveNavmesh;
-    public Animator anim;
-    public float leaveDistance;
-
-    MoveArea area;
-
     bool isPickedUp = false;
-
     ScoreInventory scoreInventory;
+    [SerializeField] GameObject circle;
+    [SerializeField] GameObject scoreBerrySprite;
 
     void Start()
     {
-        area = FindObjectOfType<MoveArea>();
         scoreInventory = FindObjectOfType<ScoreInventory>();
+    }
 
-        carveNavmesh.SetActive(false);
+    private void Update()
+    {
+        if (!isPickedUp)
+        {
+            MoveAroundBerry();
+        }
+    }
+
+    private void MoveAroundBerry()
+    {
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -27,20 +32,15 @@ public class ScoreBush : MonoBehaviour
             return;
 
         isPickedUp = true;
-
-        carveNavmesh.SetActive(true);
-        anim.SetBool("Open", true);
-
-        //player = other.gameObject.transform;
-        //player.GetComponent<PlayerController>().SwitchSafeState(true);
+        scoreBerrySprite.SetActive(false);
+        circle.SetActive(false);
         scoreInventory.AddBerry();
     }
 
     public void ResetBush()
     {
         isPickedUp = false;
-
-        carveNavmesh.SetActive(false);
-        anim.SetBool("Open", false);
+        scoreBerrySprite.SetActive(true);
+        circle.SetActive(true);
     }
 }

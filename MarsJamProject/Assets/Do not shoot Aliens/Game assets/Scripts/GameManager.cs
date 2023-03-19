@@ -21,14 +21,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool gameStarted;
 
-    Spawner spawner;
-    PlayerController player;
+    [SerializeField] Spawner spawnerSmall;
+    [SerializeField] Spawner spawnerBig;
+    [SerializeField] PlayerController player;
 
-    void Start()
-    {
-        spawner = GameObject.FindObjectOfType<Spawner>();
-        player = GameObject.FindObjectOfType<PlayerController>();
-    }
 
     void Update()
     {
@@ -58,7 +54,8 @@ public class GameManager : MonoBehaviour
 
         gamePanel.SetBool("Visible", true);
 
-        spawner.StartSpawning();
+        spawnerSmall.StartSpawning();
+        spawnerBig.StartSpawning();
     }
 
     public void GameOver()

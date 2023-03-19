@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-
     public NavMeshAgent agent;
     public Animator anim;
     public GameObject spawnEffect;
@@ -26,35 +23,29 @@ public class Enemy : MonoBehaviour
 
     Transform player;
     MoveArea area;
-    GameManager manager;
 
     bool spawned;
-    bool angry;
+    [SerializeField] bool isAngry;
 
     Vector3 randomTarget;
     NavMeshPath path;
-    Renderer rend;
 
-    void Start()
+    public void Init(MoveArea moveArea, Transform plr)
     {
-        PlayerController controller = FindObjectOfType<PlayerController>();
-
-        if (controller != null)
-            player = controller.gameObject.transform;
-
-        area = FindObjectOfType<MoveArea>();
-        manager = FindObjectOfType<GameManager>();
-
-        rend = GetComponentInChildren<Renderer>();
-        rend.material.color = normalColor;
+        area = moveArea;
+        player = plr;
 
         path = new NavMeshPath();
-
         agent.speed = walkspeed;
         agent.enabled = false;
 
         Instantiate(spawnEffect, transform.position, transform.rotation);
         transform.Translate(Vector3.up * spawnHeight);
+
+        if (isAngry)
+        {
+            randomTarget = plr.transform.position;
+        }
     }
 
     void Update()
@@ -71,46 +62,46 @@ public class Enemy : MonoBehaviour
                 collisionSphere.SetActive(true);
 
                 anim.SetInteger("State", 1);
+                if (area == null)
+                {
+                    Debug.Log("Area is null!");
+                }
                 randomTarget = area.RandomPosition();
             }
             return;
         }
 
-        if (angry && player != null)
+        if (isAngry && player != null)
         {
             agent.CalculatePath(player.position, path);
 
             if (path.status != NavMeshPathStatus.PathComplete)
             {
-                rend.material.color = normalColor;
-
                 if (anim.GetInteger("State") != 1)
                     ContinueWalking();
 
                 RandomWalk();
-
                 return;
             }
 
-            rend.material.color = angryColor;
             agent.destination = player.position;
 
-            if (anim.GetInteger("State") != 2)
-            {
-                anim.SetInteger("State", 2);
-                agent.speed = runspeed;
-                agent.stoppingDistance = jumpAttackDistance;
-            }
+            //if (anim.GetInteger("State") != 2)
+            //{
+            //    anim.SetInteger("State", 2);
+            //    agent.speed = runspeed;
+            //    agent.stoppingDistance = jumpAttackDistance;
+            //}
 
-            if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance + 0.1f)
-            {
-                agent.isStopped = true;
-                transform.LookAt(player.position);
-                anim.SetInteger("State", 3);
-                spawned = false;
+            //if (Vector3.Distance(transform.position, player.position) < agent.stoppingDistance + 0.1f)
+            //{
+            //    agent.isStopped = true;
+            //    transform.LookAt(player.position);
+            //    anim.SetInteger("State", 3);
+            //    spawned = false;
 
-                StartCoroutine(Attack());
-            }
+            //    StartCoroutine(Attack());
+            //}
         }
         else
         {
@@ -143,13 +134,13 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(bloodEffect, transform.position + Vector3.up * 1.5f, transform.rotation);
 
-        if (angry)
+        if (isAngry)
         {
             Die();
         }
         else
         {
-            angry = true;
+            isAngry = true;
         }
     }
 
@@ -159,22 +150,5 @@ public class Enemy : MonoBehaviour
         newRagdoll.GetComponentInChildren<Renderer>().material.color = angryColor;
 
         Destroy(gameObject);
-    }
-
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        if (player != null && Vector3.Distance(transform.position, player.position) > agent.stoppingDistance + 0.1f)
-        {
-            agent.isStopped = false;
-            anim.SetInteger("State", 2);
-            spawned = true;
-        }
-        else
-        {
-            manager.GameOver();
-            ContinueWalking();
-        }
     }
 }
